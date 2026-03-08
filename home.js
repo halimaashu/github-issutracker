@@ -152,7 +152,7 @@ console.log(card)
          <div class="flex gap-3">
           <button class="btn ${bg}">${card.status}</button>
           <p>Opened by ${card.author||"not avail abel"}</p>
-          <p>22-09-2009</p>
+          <p>${card.createdAt}</p>
           
          </div>
          <h3 class="text-xl font-bold text-gray-500">${card.description}</h3>
