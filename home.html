@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Issue || Tracker _HoME_Pages</title>
+    <!-- style sheet -->
+
+    <!-- tailwind + daisyUI -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar bg-base-100 shadow-sm">
+        <div class="flex-1 flex items-center gap-1.5">
+          <img class="w-[30px]" src="./assets/github-logo.png" alt="" />
+          <a class="md:text-xl font-bold">Git hun isssue tracker</a>
+        </div>
+        <div class="flex gap-2">
+          <input
+            id="search"
+            type="text"
+            placeholder="Search"
+            class="input input-bordered w-24 md:w-auto"
+          />
+          <div class="">
+            <button onclick="searchIt()" class="btn btn-primary">
+              + Issue
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-10/12 mx-auto bg-base-200 mt-10 text-center">
+      <section class="bg-base-100">
+        <div class="">
+          <button
+            onclick="showOnly('all')"
+            id="all"
+            class="btn bg-[#4A00FF] text-white"
+          >
+            all
+          </button>
+          <button onclick="showOnly('open')" id="open" class="acive btn mx-5">
+            open
+          </button>
+          <button onclick="showOnly('closed')" id="closed" class="btn">
+            closed
+          </button>
+        </div>
+      </section>
+      <section class="mt-5 bg-base-100 flex justify-between shadow p-4">
+        <div class="flex gap-3 justify-center">
+          <div>
+            <img
+              class="bg-violet-200 rounded-full p-3"
+              src="./assets/Aperture.png"
+              alt=""
+            />
+          </div>
+          <div class="">
+            <h1 class="text-2xl font-bold">
+              <span id="issueCount">50</span> Issues
+            </h1>
+            <p class="text-gray-500">Track and manage your project issues</p>
+          </div>
+        </div>
+
+        <div class="flex justify-center items-center gap-4 flex-wrap">
+          <div class="flex justify-center items-center gap-3.5">
+            <div class="inline-block w-3 h-3 bg-green-500 rounded-full"></div>
+            open
+          </div>
+          <!-- For the "closed" status -->
+          <div class="">
+            <div class="inline-block w-3 h-3 bg-violet-500 rounded-full"></div>
+            closed
+          </div>
+        </div>
+      </section>
+
+      <!-- all issue section -->
+      <section
+        id="all-sec"
+        class="grid md:grid-cols-3 gap-4 bg-base-200 mt-4 px-7"
+      ></section>
+
+      <!-- open sec -->
+      <section
+        id="open-sec"
+        class="hidden grid md:grid-cols-3 gap-4 bg-base-200 mt-4 px-7"
+      ></section>
+
+      <!-- closed sec -->
+      <section
+        id="closed-sec"
+        class="hidden grid md:grid-cols-3 gap-4 bg-base-200 mt-4 px-7"
+      ></section>
+      <section id="loading" class="hidden flex justify-center items-center">
+        <span class="loading loading-spinner loading-xl"></span>
+      </section>
+
+      <!-- modal -->
+      <section id="modal">
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal.showModal()">open modal</button> -->
+        <dialog id="my_modal" class="modal modal-bottom sm:modal-middle">
+          <div  class="modal-box">
+             <div id="modalBos">
+
+             </div>
+            
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn btn-primary">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
+      
+    </main>
+    <script src="./home.js"></script>
+  </body>
+</html>

@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Issue Tracker</title>
+    <title>Issue || Tracker_LogIn_Pages</title>
     <!-- style sheet -->
     <link rel="stylesheet" href="style.css" />
     <!-- tailwind + daisyUI -->
+
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
@@ -22,10 +23,63 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
   </head>
   <body>
-    <h1 class="text-8xl font-bold">ready the boiler plate</h1>
+    <main
+      class="mx-auto flex flex-col justify-center items-center text-center p-7"
+    >
+      <section
+        id="login"
+        class="md:w-1/2 flex flex-col justify-center items-center bg-base-100 shadow-md text-center rounded-md p-9 space-y-4"
+      >
+        <img class="" src="./assets/github-logo.png" alt="" />
+        <h1 class="text-[rgba(31, 41, 55, 0.51)] text-4xl font-bold">
+          GitHub Issues Tracker
+        </h1>
+        <p class="text-[#64748B]">Sign in to manage your issues</p>
+
+        <!-- login form daisyui -->
+        <fieldset class="fieldset rounded-box w-full p-4">
+          <legend class="fieldset-legend w-full"></legend>
+
+          <label class="label">Username</label>
+          <input
+          id="userName"
+            type="text"
+            class="input w-full rounded-md"
+            placeholder="Enter your name"
+          />
+          <p class="text-violet-500 text-left font-bold">
+            <small>Default: admin</small>
+          </p>
+
+          <label class="label">Password</label>
+          <input
+          id="password"
+            type="password"
+            class="input w-full rounded-md"
+            placeholder="Password"
+          />
+          <p class="text-violet-500 text-left font-bold">
+            <small>Default: admin123</small>
+          </p>
+          <button id="login-btn" class="btn btn-primary mt-4">Login</button>
+        </fieldset>
+      <div class="text-gray-500"> <hr></div>
+        <h1 class="text-gray-500 text-xl">OR </h1>
+        <p class="text-[#64748B]">Demo Credentials:</p>
+        <div class="bg-base-200 p-8 justify-center w-full">
+          <h3>
+            
+            <span class="font-bold">Username:</span> admin <br /><span
+              class="font-bold"
+              >Password:</span
+            >
+            admin123
+          </h3>
+        </div>
+      </section>
+    </main>
 
     <script src="./index.js"></script>
   </body>
