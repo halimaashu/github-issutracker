@@ -117,33 +117,35 @@ const searchIt = async () => {
 };
 
 async function showDetai(id) {
-  const dat= await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
-  const toJson=await dat.json();
-    const card=  toJson.data;
-console.log(card)
-   let border = "";
-    let img = "";
-    let priorityBg = "";
-    let bg='';
-    const div = document.createElement("div");
-    if (card.priority === "high") {
-      priorityBg = "bg-red-500";
-    }
-    if (card.priority === "medium") {
-      priorityBg = "bg-[#FFF6D1]";
-    }
-    if (card.priority === "low") {
-      priorityBg = "bg-gray-300";
-    }
-    if (card.status === "open") {
-      border = "border-green-400";
-       bg="bg-green-500"
-      img = "./assets/Open-Status.png";
-    } else if (card.status === "closed") {
-      border = "border-violet-400";
-      bg="bg-violet-500"
-      img = "./assets/Closed- Status .png";
-    }
+  const dat = await fetch(
+    `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`,
+  );
+  const toJson = await dat.json();
+  const card = toJson.data;
+  console.log(card);
+  let border = "";
+  let img = "";
+  let priorityBg = "";
+  let bg = "";
+  const div = document.createElement("div");
+  if (card.priority === "high") {
+    priorityBg = "bg-red-500";
+  }
+  if (card.priority === "medium") {
+    priorityBg = "bg-[#FFF6D1]";
+  }
+  if (card.priority === "low") {
+    priorityBg = "bg-gray-300";
+  }
+  if (card.status === "open") {
+    border = "border-green-400";
+    bg = "bg-green-500";
+    img = "./assets/Open-Status.png";
+  } else if (card.status === "closed") {
+    border = "border-violet-400";
+    bg = "bg-violet-500";
+    img = "./assets/Closed- Status .png";
+  }
 
   document.getElementById("modalBos").innerHTML = `
   <div  class="${card.status} bg-base-100 space-y-3.5 p-4 rounded-md mb-10 shadow border-t-4 ${border} ">
@@ -151,7 +153,7 @@ console.log(card)
            <h1 class="text-3xl font-bold">${card.title}</h1>
          <div class="flex gap-3">
           <button class="btn ${bg}">${card.status}</button>
-          <p>Opened by ${card.author||"not avail abel"}</p>
+          <p>Opened by ${card.author || "not avail abel"}</p>
           <p>${card.createdAt}</p>
           
          </div>
