@@ -15,10 +15,7 @@ const showOnly = (id) => {
 
   buttons.forEach((btn) => {
     document.getElementById(`${btn}-sec`).classList.add("hidden");
-    document.getElementById(`${btn}-sec`).classList.add("acive");
     document.getElementById(btn).classList.remove(...clased);
-
-    //    ev.classList.remove("btn bg-[#4A00FF]  text-white")
   });
   document.getElementById(id).classList.add(...clased);
   document.getElementById(`${id}-sec`).classList.remove("hidden");
@@ -39,7 +36,8 @@ const loadAllData = async () => {
   }
   loadingSec.classList.add("hidden");
 };
-// funcion
+
+// function
 function count(id) {
   const issueCount = document.getElementById("issueCount");
   const tab = document.getElementById(id);
@@ -75,7 +73,7 @@ const showLoadAllData = (data) => {
         <div  class="${card.status} bg-base-100 space-y-3.5 p-4 rounded-md mb-10 shadow border-t-4 ${border} ">
           <!-- card fonts -->
           <div class="flex justify-between mt-green-500">
-            <img src="${img}"">
+            <img src="${img}">
             <h1 class="${priorityBg} py-0.5 px-7 rounded-xl">${card.priority}</h1>
           </div>
           <h1 onclick="showDetai(${card.id}); my_modal.showModal()" class="text-xl font-bold">${card.title}</h1>
@@ -147,7 +145,7 @@ async function showDetai(id) {
     img = "./assets/Closed- Status .png";
   }
 
-  document.getElementById("modalBos").innerHTML = `
+  document.getElementById("modalBox").innerHTML = `
   <div  class="${card.status} bg-base-100 space-y-3.5 p-4 rounded-md mb-10 shadow border-t-4 ${border} ">
           <!-- card fonts -->
            <h1 class="text-3xl font-bold">${card.title}</h1>
