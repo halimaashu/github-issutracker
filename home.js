@@ -66,7 +66,7 @@ const showLoadAllData = (data) => {
       img = "./assets/Open-Status.png";
     } else if (card.status === "closed") {
       border = "border-violet-400";
-      img = "./assets/Closed- Status .png";
+      img = "./assets/Closed- Status.png";
     }
     div.innerHTML = `
      <!-- card -->
@@ -142,7 +142,7 @@ async function showDetai(id) {
   } else if (card.status === "closed") {
     border = "border-violet-400";
     bg = "bg-violet-500";
-    img = "./assets/Closed- Status .png";
+    img = "./assets/Closed- Status.png";
   }
 
   document.getElementById("modalBox").innerHTML = `
